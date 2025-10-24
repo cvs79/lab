@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: backend-dev
+  name: devops-backend-dev
   labels:
     team: backend
     environment: dev
@@ -14,7 +14,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: backend-dev-quota
-  namespace: backend-dev
+  namespace: devops-backend-dev
 spec:
   hard:
     requests.cpu: "3"
@@ -30,13 +30,13 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: backend-dev-limits
-  namespace: backend-dev
+  namespace: devops-backend-dev
 spec:
   limits:
-  - default:
-      cpu: 1000m
-      memory: 1Gi
-    defaultRequest:
-      cpu: 200m
-      memory: 256Mi
-    type: Container
+    - default:
+        cpu: 1000m
+        memory: 1Gi
+      defaultRequest:
+        cpu: 200m
+        memory: 256Mi
+      type: Container

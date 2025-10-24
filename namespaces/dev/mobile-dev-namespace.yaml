@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: mobile-dev
+  name: devops-mobile-dev
   labels:
     team: mobile
     environment: dev
@@ -14,7 +14,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: mobile-dev-quota
-  namespace: mobile-dev
+  namespace: devops-mobile-dev
 spec:
   hard:
     requests.cpu: "1"
@@ -30,13 +30,13 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: mobile-dev-limits
-  namespace: mobile-dev
+  namespace: devops-mobile-dev
 spec:
   limits:
-  - default:
-      cpu: 500m
-      memory: 512Mi
-    defaultRequest:
-      cpu: 100m
-      memory: 128Mi
-    type: Container
+    - default:
+        cpu: 500m
+        memory: 512Mi
+      defaultRequest:
+        cpu: 100m
+        memory: 128Mi
+      type: Container
