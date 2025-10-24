@@ -13,6 +13,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
+    namespace: devops-namespaces # ✅ moet matchen met toegestane pattern (bv. devops-* )
 
   syncPolicy:
     automated:
@@ -23,7 +24,6 @@ spec:
       - PrunePropagationPolicy=foreground
       - PruneLast=true
 
-  # Health check configuration
   ignoreDifferences:
     - group: v1
       kind: Namespace
