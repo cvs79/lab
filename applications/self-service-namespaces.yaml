@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: self-service-namespaces
+  namespace: argocd
+spec:
+  project: self-service
+
+  source:
+    repoURL: "https://github.com/cvs79/lab.git"
+    targetRevision: HEAD
+    path: namespaces
+
+  destination:
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+
+  # Health check configuration
+  ignoreDifferences:
+    - group: v1
+      kind: Namespace
+      jsonPointers:
+        - /metadata/annotations
+        - /metadata/labels
