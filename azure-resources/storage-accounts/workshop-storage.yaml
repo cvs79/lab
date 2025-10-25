@@ -1,0 +1,19 @@
+apiVersion: storage.azure.com/v1api20230101
+kind: StorageAccount
+metadata:
+  name: workshopstorageuniqueid
+  namespace: default
+spec:
+  location: swedencentral
+  kind: StorageV2
+  sku:
+    name: Standard_LRS
+  owner:
+    name: workshop-rg
+  properties:
+    accessTier: Hot
+    allowBlobPublicAccess: false
+    minimumTlsVersion: TLS1_2
+  tags:
+    environment: workshop
+    managed-by: azure-service-operator
