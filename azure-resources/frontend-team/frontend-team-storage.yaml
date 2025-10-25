@@ -1,19 +1,16 @@
 apiVersion: storage.azure.com/v1api20230101
 kind: StorageAccount
 metadata:
-  name: frontendstorageuniqueid
+  name: frontendstoragecvs79
   namespace: devops-frontend-dev
 spec:
-  location: eastus
+  location: swedencentral
   kind: StorageV2
   sku:
     name: Standard_LRS
   owner:
     name: frontend-team-rg
-  properties:
-    accessTier: Hot
-    allowBlobPublicAccess: false
-    minimumTlsVersion: TLS1_2
+  accessTier: Hot
   tags:
     environment: dev
     team: frontend

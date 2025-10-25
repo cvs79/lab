@@ -4,7 +4,7 @@ metadata:
   name: frontend-team-rg
   namespace: devops-frontend-dev
 spec:
-  location: eastus
+  location: swedencentral
   tags:
     environment: dev
     team: frontend
