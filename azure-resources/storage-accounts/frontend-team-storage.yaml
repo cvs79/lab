@@ -1,0 +1,20 @@
+apiVersion: storage.azure.com/v1api20230101
+kind: StorageAccount
+metadata:
+  name: frontendstorageuniqueid
+  namespace: devops-frontend-dev
+spec:
+  location: eastus
+  kind: StorageV2
+  sku:
+    name: Standard_LRS
+  owner:
+    name: frontend-team-rg
+  properties:
+    accessTier: Hot
+    allowBlobPublicAccess: false
+    minimumTlsVersion: TLS1_2
+  tags:
+    environment: dev
+    team: frontend
+    managed-by: azure-service-operator
