@@ -1,0 +1,17 @@
+apiVersion: storage.azure.com/v1api20230101
+kind: StorageAccount
+metadata:
+  name: stteamchrisstorage123
+  namespace: devops-frontend-dev
+spec:
+  location: swedencentral
+  kind: StorageV2
+  sku:
+    name: Standard_LRS
+  owner:
+    name: chris-team-rg
+  accessTier: Hot
+  tags:
+    environment: dev
+    team: chris
+    managed-by: azure-service-operator
