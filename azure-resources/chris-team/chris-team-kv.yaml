@@ -1,0 +1,13 @@
+apiVersion: keyvault.azure.com/v1api20230701
+kind: Vault
+metadata:
+  name: kvchristeamvault01
+  namespace: devops-frontend-dev
+spec:
+  location: swedencentral
+  owner:
+    name: chris-team-rg
+  properties:
+    sku:
+      family: A
+      name: standard
