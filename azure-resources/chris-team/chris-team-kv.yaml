@@ -8,6 +8,7 @@ spec:
   owner:
     name: chris-team-rg
   properties:
+    tenantId: "6bc163d2-10ab-4a85-a28e-19d85e73f4be"
     sku:
       family: A
       name: standard
